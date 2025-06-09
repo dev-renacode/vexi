@@ -6,7 +6,7 @@ interface BentoNotificationsProps {
 
 const BentoNotifications = ({ className }: BentoNotificationsProps) => {
   return (
-    <BentoGeneralItem className={className}>
+    <BentoGeneralItem className={`${className} p-6`}>
       <h2>Notifications</h2>
       <p>Cargando...</p>
     </BentoGeneralItem>

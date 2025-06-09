@@ -1,4 +1,4 @@
-import { Building2Icon, HomeIcon } from "lucide-react";
+import { Building2Icon, HomeIcon, MenuIcon } from "lucide-react";
 import BellIcon from "../../assets/icons/BellIcon.svg";
 import NutIcon from "../../assets/icons/NutIcon.svg";
 import { CiSearch } from "react-icons/ci";
@@ -19,7 +19,7 @@ const NavBar = () => {
           </p>
         </div>
         <nav>
-          <ul className="flex items-center gap-4">
+          <ul className="lg:flex items-center gap-4 hidden">
             <div className="relative">
               <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
@@ -35,6 +35,9 @@ const NavBar = () => {
               <img src={NutIcon} alt="NutIcon" />
             </button>
           </ul>
+          <button className="lg:hidden flex items-center justify-center pt-1">
+            <MenuIcon size={30} className="hover:text-purple-400" />
+          </button>
         </nav>
       </header>
       <SideBar />
@@ -46,7 +49,7 @@ const SideBar = () => {
   const location = useLocation();
 
   return (
-    <section className="fixed top-0 left-0 w-64 h-screen bg-sidebar border-r border-gray-700 z-0 text-gray-400">
+    <section className="fixed hidden lg:block top-0 left-0 w-64 h-screen bg-sidebar border-r border-gray-700 z-0 text-gray-400">
       <nav className="flex pt-16">
         <ul className="w-full flex flex-col gap-1 mt-5">
           <SideBarItem

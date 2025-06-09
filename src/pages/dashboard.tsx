@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <>
       <NavBar />
-      <div className="pt-16 pl-65 text-white">
+      <div className="pt-16 px-6 text-white">
         <Outlet />
       </div>
     </>

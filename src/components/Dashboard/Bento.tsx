@@ -5,7 +5,7 @@ import { FaUsers } from "react-icons/fa";
 
 const Bento = () => {
   return (
-    <section className="w-full h-[600px] grid grid-cols-12 grid-rows-13 gap-4">
+    <section className="w-full md:h-[600px] grid grid-cols-12 grid-rows-13 gap-4 md:p-7">
       <BentoStatsItem
         className="col-span-12 row-span-5 md:col-span-3"
         title="Example"
@@ -34,8 +34,8 @@ const Bento = () => {
         percentage={10}
         icon={<FaUsers />}
       />
-      <BentoImportantItem className="col-span-8 md:row-span-8 md:col-span-8 " />
-      <BentoNotifications className="col-span-8 md:row-span-8 md:col-span-4" />
+      <BentoImportantItem className="col-span-12 row-span-5 md:row-span-8 md:col-span-8" />
+      <BentoNotifications className="col-span-12 row-span-5 md:row-span-8 md:col-span-4" />
     </section>
   );
 };

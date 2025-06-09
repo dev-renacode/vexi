@@ -3,7 +3,11 @@ import { useLocation } from "react-router-dom";
 function NavBar() {
   const location = useLocation();
   const hideNavBar =
-    location.pathname === "/login" || location.pathname === "/register";
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/dashboard" ||
+    location.pathname === "/dashboard/inicio" ||
+    location.pathname === "/dashboard/mis-empresas";
 
   if (hideNavBar) return null;
 

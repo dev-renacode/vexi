@@ -1,9 +1,9 @@
-import macbook from "../assets/images/macbook.webp";
-import blur from "../assets/images/blur.webp";
+import macbook from "../../assets/images/macbook.webp";
+import blur from "../../assets/images/blur.webp";
 
 function Hero() {
   return (
-    <section className="text-white bg-black h-screen flex relative pt-20">
+    <section className="text-white h-screen flex relative pt-20">
       <img
         src={blur}
         alt="blur"

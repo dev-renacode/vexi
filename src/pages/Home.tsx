@@ -1,7 +1,13 @@
-import Hero from "../components/Hero";
+import Hero from "../components/Home/Hero";
+import VexiSection from "../components/Home/VexiSection";
 
 function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <VexiSection />
+    </>
+  );
 }
 
 export default Home;

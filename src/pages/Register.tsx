@@ -28,6 +28,9 @@ const Register = () => {
         throw new Error("Network response was not ok");
       }
 
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
       alert("Registration successful!");
       navigate("/login");
     } catch (error) {

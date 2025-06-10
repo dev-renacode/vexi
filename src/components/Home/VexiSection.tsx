@@ -3,8 +3,8 @@ import Wrap from "./Wrap";
 
 function VexiSection() {
   return (
-    <section className="bg-gradient-to-b from-black to-secondary h-full text-white">
-      <div className="flex flex-col pt-50 h-full max-w-4xl mx-auto gap-6">
+    <section className="bg-gradient-to-b from-black to-secondary h-full text-white px-6">
+      <div className="flex flex-col lg:pt-50 h-full max-w-4xl mx-auto gap-6">
         <h2 className="text-5xl font-bold">¿Porque Vexi?</h2>
         <p className="text-lg">
           Elige Vexi porque es la forma más fácil y accesible para que tu pyme

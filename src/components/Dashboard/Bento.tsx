@@ -5,7 +5,7 @@ import { FaUsers } from "react-icons/fa";
 
 const Bento = () => {
   return (
-    <section className="w-full md:h-[600px] grid grid-cols-12 grid-rows-13 gap-4 md:p-7">
+    <section className="w-full md:h-[600px] grid grid-cols-12 grid-rows-13 gap-4">
       <BentoStatsItem
         className="col-span-12 row-span-5 md:col-span-3"
         title="Example"

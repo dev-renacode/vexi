@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App.tsx";
 import NavBar from "./components/Home/NavBar.tsx";
 import { BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <NavBar />
-      <App />
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <NavBar />
+        <App />
+      </BrowserRouter>
+    </UserProvider>
   </StrictMode>
 );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Login = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useUser();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +26,9 @@ const Login = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      setUser(data.user);
       navigate("/");
 
       // TODO: Handle successful login (e.g., redirect, store token)
@@ -104,12 +109,18 @@ const Login = () => {
             </button>
           </div>
 
-          <div className="mt-4 text-center">
+          <div className="mt-4 text-center flex flex-col gap-2">
             <a
               href="#"
               className="text-sm text-violet-400 hover:text-violet-300"
             >
               ¿Olvidaste tu contraseña?
+            </a>
+            <a
+              href="/register"
+              className="text-sm text-violet-400 hover:text-violet-300"
+            >
+              ¿No tienes una cuenta? Regístrate
             </a>
           </div>
         </form>

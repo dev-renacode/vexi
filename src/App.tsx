@@ -3,7 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import NavBar from "./components/Home/NavBar";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard";
 import Inicio from "./pages/Inicio";
 import MisEmpresas from "./pages/MisEmpresas";
 

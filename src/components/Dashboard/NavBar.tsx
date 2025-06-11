@@ -1,10 +1,10 @@
-import { Building2Icon, HomeIcon, MenuIcon } from "lucide-react";
-import BellIcon from "../../assets/icons/BellIcon.svg";
-import NutIcon from "../../assets/icons/NutIcon.svg";
+import { Building2Icon, HomeIcon, MenuIcon, UserIcon } from "lucide-react";
 import { CiSearch } from "react-icons/ci";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import LoginLogoutBtn from "../LoginLogoutBtn";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const buttonClass =
     "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 relative";
 
@@ -14,7 +14,7 @@ const NavBar = () => {
         <div>
           <p className="text-purple-400 font-bold text-2xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-purple-400 from-purple-600">
-              Vexi Empresas
+              <a href="/">Vexi Empresas</a>
             </span>
           </p>
         </div>
@@ -29,11 +29,9 @@ const NavBar = () => {
               />
             </div>
             <button className={buttonClass}>
-              <img src={BellIcon} alt="BellIcon" />
+              <UserIcon size={24} className="hover:text-purple-400" />
             </button>
-            <button className={buttonClass}>
-              <img src={NutIcon} alt="NutIcon" />
-            </button>
+            <LoginLogoutBtn navigate={navigate} />
           </ul>
           <button className="lg:hidden flex items-center justify-center pt-1">
             <MenuIcon size={30} className="hover:text-purple-400" />

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 
 interface UserProfile {
+  id: string;
   email: string;
   username: string;
   gender: string;

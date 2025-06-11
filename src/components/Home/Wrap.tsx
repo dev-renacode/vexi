@@ -5,9 +5,7 @@ interface WrapProps {
 
 const Wrap = ({ children, className }: WrapProps) => {
   return (
-    <section
-      className={`flex justify-center mx-auto flex-wrap gap-7 ${className}`}
-    >
+    <section className={`flex mx-auto flex-wrap gap-5 pt-7 ${className}`}>
       {children}
     </section>
   );

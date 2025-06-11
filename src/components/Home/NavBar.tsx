@@ -1,9 +1,8 @@
 import { MenuIcon } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useUser } from "../../context/UserContext";
+import LoginLogoutBtn from "../LoginLogoutBtn";
 
 function NavBar() {
-  const { user } = useUser();
   const location = useLocation();
   const navigate = useNavigate();
   const hideNavBar =
@@ -15,18 +14,11 @@ function NavBar() {
 
   if (hideNavBar) return null;
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
-
   return (
     <header className="text-white items-center bg-black/50 fixed w-full z-10 backdrop-blur-xl">
       <div className="mx-auto max-w-4xl flex justify-between px-5 py-2 rounded-2xl">
         <div className="flex items-center basis-0 flex-grow">
-          <p className="text-purple-400 font-bold text-xl">
-            Vexi<span className="text-white">.</span>
-          </p>
+          <p className="text-purple-400 font-bold text-xl">Vexi</p>
         </div>
 
         <nav className="hidden basis-0 justify-center lg:flex">
@@ -48,21 +40,7 @@ function NavBar() {
         </button>
 
         <div className="hidden items-center basis-0 flex-grow justify-end lg:flex">
-          {!user ? (
-            <button
-              onClick={() => navigate("/login")}
-              className="cursor-pointer bg-green-600 px-3 py-1 rounded-lg ml-2 font-medium text-sm hover:bg-green-700"
-            >
-              Iniciar Sesión
-            </button>
-          ) : (
-            <button
-              onClick={handleLogout}
-              className="cursor-pointer bg-red-600 px-3 py-1 rounded-lg ml-2 font-medium text-sm hover:bg-red-700"
-            >
-              Cerrar Sesión
-            </button>
-          )}
+          <LoginLogoutBtn navigate={navigate} />
         </div>
       </div>
       <BottomNavBar />

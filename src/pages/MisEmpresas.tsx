@@ -3,6 +3,7 @@ import CreateEmpresaCard from "../components/Dashboard/CreateEmpresaCard";
 import EmpresaCard from "../components/Dashboard/EmpresaCard";
 import Wrap from "../components/Home/Wrap";
 import { useUser } from "../context/UserContext";
+import { Link } from "react-router-dom";
 
 interface Empresa {
   id: string;
@@ -46,13 +47,14 @@ const MisEmpresas = () => {
         <Wrap>
           <CreateEmpresaCard onEmpresaCreated={fetchEmpresas} />
           {empresas.map((empresa) => (
-            <EmpresaCard
-              key={empresa.id}
-              nombre={empresa.nombre}
-              descripcion={empresa.descripcion}
-              logo={empresa.logo}
-              creationDate={empresa.creationDate}
-            />
+            <Link key={empresa.id} to={`/dashboard/empresa/${empresa.id}`}>
+              <EmpresaCard
+                nombre={empresa.nombre}
+                descripcion={empresa.descripcion}
+                logo={empresa.logo}
+                creationDate={empresa.creationDate}
+              />
+            </Link>
           ))}
         </Wrap>
       </div>

@@ -10,7 +10,8 @@ function NavBar() {
     location.pathname === "/register" ||
     location.pathname === "/dashboard" ||
     location.pathname === "/dashboard/inicio" ||
-    location.pathname === "/dashboard/mis-empresas";
+    location.pathname === "/dashboard/mis-empresas" ||
+    location.pathname.includes("/dashboard/empresa/");
 
   if (hideNavBar) return null;
 

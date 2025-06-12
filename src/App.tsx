@@ -6,6 +6,7 @@ import NavBar from "./components/Home/NavBar";
 import Dashboard from "./pages/dashboard";
 import Inicio from "./pages/Inicio";
 import MisEmpresas from "./pages/MisEmpresas";
+import EmpresaPerfil from "./pages/EmpresaPerfil";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" element={<Inicio />} />
           <Route path="mis-empresas" element={<MisEmpresas />} />
+          <Route path="empresa/:id" element={<EmpresaPerfil />} />
         </Route>
       </Routes>
     </>
